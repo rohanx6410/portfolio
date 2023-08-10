@@ -329,8 +329,9 @@
                     </form> -->
                   
                       <!--added submit event  -->
+<!--                   old form -->
                   
-                    <form action="https://formspree.io/f/mpzgpqvq" method="POST" id="myForm" onsubmit="event.preventDefault(); this.submit(); this.reset();" >
+<!--                     <form action="https://formspree.io/f/mpzgpqvq" method="POST" id="myForm" >
                         <div class="fields">
                             <div class="field name">
                                 <input type="name" placeholder="Name" name="name" required>
@@ -348,8 +349,36 @@
                         <div class="button-area">
                             <button type="submit">Send message</button>
                         </div>
-                    </form>
-                    
+                    </form> -->
+              <!--new -->
+                  <form action="https://formspree.io/f/mpzgpqvq" method="post" id="myForm" onsubmit="clearFormAfterSubmit(event);">
+    <div class="fields">
+        <div class="field name">
+            <input type="text" placeholder="Name" name="name" required>
+        </div>
+        <div class="field email">
+            <input type="email" placeholder="Email" name="Email" required>
+        </div>
+    </div>
+    <div class="field">
+        <input type="text" placeholder="Subject" name="Subject" required>
+    </div>
+    <div class="field textarea">
+        <textarea cols="30" rows="10" placeholder="Message.." name="Message" required></textarea>
+    </div>
+    <div class="button-area">
+        <button type="submit">Send message</button>
+    </div>
+</form>
+
+  <script>
+       function clearFormAfterSubmit(event) {
+          setTimeout(function() {
+            document.getElementById("myForm").reset();
+             }, 120000);
+                     }
+</script>
+
                 </div>
             </div>
         </div>
